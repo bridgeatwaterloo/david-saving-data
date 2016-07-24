@@ -1,0 +1,57 @@
+<hr>
+<p>layout: docs
+title: Progress</p>
+<h2 id="group-components">group: components</h2>
+<p>Stylize <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress">the HTML5 <code>&lt;progress&gt;</code> element</a> with a few extra classes and some crafty browser-specific CSS. Be sure to read up on the browser support.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Will be replaced with the ToC, excluding the &quot;Contents&quot; header
+{:toc}</li>
+</ul>
+<h3 id="example">Example</h3>
+<p>{% example html %}</p>
+<p><progress class="progress" value="0" max="100">0%</progress></p>
+<p><progress class="progress" value="25" max="100">25%</progress></p>
+<p><progress class="progress" value="50" max="100">50%</progress></p>
+<p><progress class="progress" value="75" max="100">75%</progress></p>
+<p><progress class="progress" value="100" max="100">100%</progress>
+{% endexample %}</p>
+<h3 id="ie9-support">IE9 support</h3>
+<p>Internet Explorer 9 doesn&#39;t support the HTML5 <code>&lt;progress&gt;</code> element, but we can work around that.</p>
+<p>{% example html %}</p>
+<p><progress class="progress" value="25" max="100">
+  <div class="progress">
+    <span class="progress-bar" style="width: 25%;">25%</span>
+  </div>
+</progress>
+{% endexample %}</p>
+<h3 id="contextual-alternatives">Contextual alternatives</h3>
+<p>Progress bars use some of the same button and alert classes for consistent styles.</p>
+<p>{% example html %}</p>
+<p><progress class="progress progress-success" value="25" max="100">25%</progress></p>
+<p><progress class="progress progress-info" value="50" max="100">50%</progress></p>
+<p><progress class="progress progress-warning" value="75" max="100">75%</progress></p>
+<p><progress class="progress progress-danger" value="100" max="100">100%</progress>
+{% endexample %}</p>
+<h3 id="striped">Striped</h3>
+<p>Uses a gradient to create a striped effect.</p>
+<p>{% example html %}</p>
+<p><progress class="progress progress-striped" value="10" max="100">10%</progress></p>
+<p><progress class="progress progress-striped progress-success" value="25" max="100">25%</progress></p>
+<p><progress class="progress progress-striped progress-info" value="50" max="100">50%</progress></p>
+<p><progress class="progress progress-striped progress-warning" value="75" max="100">75%</progress></p>
+<p><progress class="progress progress-striped progress-danger" value="100" max="100">100%</progress>
+{% endexample %}</p>
+<h3 id="animated-stripes">Animated stripes</h3>
+<p>The striped gradient can also be animated. Add <code>.progress-animated</code> to <code>.progress</code> to animate the stripes right to left via CSS3 animations.</p>
+<p><strong>Animated progress bars do not work in IE9 and Opera 12</strong> as they don&#39;t support CSS3 animations.</p>
+<div class="bd-example">
+  <progress class="progress progress-striped" value="25" max="100">25%</progress>
+  <button type="button" class="btn btn-secondary bd-activate-animated-progressbar" data-toggle="button" aria-pressed="false" autocomplete="off">
+    Toggle animation
+  </button>
+</div>
+
+<p>{% highlight html %}</p>
+<p><progress class="progress progress-striped progress-animated" value="25" max="100">25%</progress>
+{% endhighlight %}</p>

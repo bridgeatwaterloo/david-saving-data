@@ -1,0 +1,152 @@
+<hr>
+<p>layout: docs
+title: Pagination</p>
+<h2 id="group-components">group: components</h2>
+<p>Provide pagination links for your site or app with the multi-page pagination component, or the simpler <a href="#pager">pager alternative</a>.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Will be replaced with the ToC, excluding the &quot;Contents&quot; header
+{:toc}</li>
+</ul>
+<h2 id="default-pagination">Default pagination</h2>
+<p>Simple pagination inspired by Rdio, great for apps and search results. The large block is hard to miss, easily scalable, and provides large click areas.</p>
+<p>{% example html %}</p>
+<p><nav>
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">4</a></li>
+    <li class="page-item"><a class="page-link" href="#">5</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endexample %}</p>
+<h3 id="disabled-and-active-states">Disabled and active states</h3>
+<p>Links are customizable for different circumstances. Use <code>.disabled</code> for unclickable links and <code>.active</code> to indicate the current page.</p>
+<p>{% example html %}</p>
+<p><nav>
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item active">
+      <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">4</a></li>
+    <li class="page-item"><a class="page-link" href="#">5</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endexample %}</p>
+<p>You can optionally swap out active or disabled anchors for <code>&lt;span&gt;</code>, or omit the anchor in the case of the prev/next arrows, to remove click functionality while retaining intended styles.</p>
+<p>{% example html %}</p>
+<p><nav>
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <span class="page-link" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </span>
+    </li>
+    <li class="page-item active"><span class="page-link">1 <span class="sr-only">(current)</span></span></li>
+  </ul>
+</nav>
+{% endexample %}</p>
+<h3 id="sizing">Sizing</h3>
+<p>Fancy larger or smaller pagination? Add <code>.pagination-lg</code> or <code>.pagination-sm</code> for additional sizes.</p>
+<p>{% example html %}</p>
+<p><nav>
+  <ul class="pagination pagination-lg">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endexample %}</p>
+<p>{% example html %}</p>
+<p><nav>
+  <ul class="pagination pagination-sm">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endexample %}</p>
+<h2 id="pager">Pager</h2>
+<p>Quick previous and next links for simple pagination implementations with light markup and styles. It&#39;s great for simple sites like blogs or magazines.</p>
+<h3 id="default-example">Default example</h3>
+<p>By default, the pager centers links.</p>
+<p>{% example html %}</p>
+<p><nav>
+  <ul class="pager">
+    <li><a href="#">Previous</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</nav>
+{% endexample %}</p>
+<h3 id="aligned-links">Aligned links</h3>
+<p>Alternatively, you can align each link to the sides:</p>
+<p>{% example html %}</p>
+<p><nav>
+  <ul class="pager">
+    <li class="pager-prev"><a href="#">Older</a></li>
+    <li class="pager-next"><a href="#">Newer</a></li>
+  </ul>
+</nav>
+{% endexample %}</p>
+<h3 id="optional-disabled-state">Optional disabled state</h3>
+<p>Pager links also use the <code>.disabled</code> class.</p>
+<p>{% example html %}</p>
+<p><nav>
+  <ul class="pager">
+    <li class="pager-prev disabled"><a href="#">Older</a></li>
+    <li class="pager-next"><a href="#">Newer</a></li>
+  </ul>
+</nav>
+{% endexample %}</p>

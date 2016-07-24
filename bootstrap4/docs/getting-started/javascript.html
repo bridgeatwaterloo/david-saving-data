@@ -1,0 +1,69 @@
+<hr>
+<p>layout: docs
+title: JavaScript</p>
+<h2 id="group-getting-started">group: getting-started</h2>
+<p>Bootstrap includes a handful of JavaScript to help bring some of our components to life. Learn more about how to include it, our data and programmatic API options, and more.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Will be replaced with the ToC, excluding the &quot;Contents&quot; header
+{:toc}</li>
+</ul>
+<h2 id="individual-or-compiled">Individual or compiled</h2>
+<p>Plugins can be included individually (using Bootstrap&#39;s individual <code>*.js</code> files), or all at once using <code>bootstrap.js</code> or the minified <code>bootstrap.min.js</code> (don&#39;t include both).</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>Some plugins and CSS components depend on other plugins. If you include plugins individually, make sure to check for these dependencies in the docs. Also note that all plugins depend on jQuery (this means jQuery must be included <strong>before</strong> the plugin files). <a href="{{ site.repo }}/blob/v{{ site.current_version }}/bower.json">Consult our <code>bower.json</code></a> to see which versions of jQuery are supported.</p>
+<h2 id="data-attributes">Data attributes</h2>
+<p>Nearly all Bootstrap plugins can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality). Be sure to <strong>only use one set of data attributes on a single element</strong> (e.g., you cannot trigger a tooltip and modal from the same button.)</p>
+<p>However, in some situations it may be desirable to disable this functionality. To disable the data attribute API, unbind all events on the document namespaced with <code>data-api</code> like so:</p>
+<p>{% highlight js %}
+$(document).off(&#39;.data-api&#39;)
+{% endhighlight %}</p>
+<p>Alternatively, to target a specific plugin, just include the plugin&#39;s name as a namespace along with the data-api namespace like this:</p>
+<p>{% highlight js %}
+$(document).off(&#39;.alert.data-api&#39;)
+{% endhighlight %}</p>
+<h2 id="programmatic-api">Programmatic API</h2>
+<p>We also believe you should be able to use all Bootstrap plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.</p>
+<p>{% highlight js %}
+$(&#39;.btn.danger&#39;).button(&#39;toggle&#39;).addClass(&#39;fat&#39;)
+{% endhighlight %}</p>
+<p>All methods should accept an optional options object, a string which targets a particular method, or nothing (which initiates a plugin with default behavior):</p>
+<p>{% highlight js %}
+$(&#39;#myModal&#39;).modal()                      // initialized with defaults
+$(&#39;#myModal&#39;).modal({ keyboard: false })   // initialized with no keyboard
+$(&#39;#myModal&#39;).modal(&#39;show&#39;)                // initializes and invokes show immediately
+{% endhighlight %}</p>
+<p>Each plugin also exposes its raw constructor on a <code>Constructor</code> property: <code>$.fn.popover.Constructor</code>. If you&#39;d like to get a particular plugin instance, retrieve it directly from an element: <code>$(&#39;[rel=&quot;popover&quot;]&#39;).data(&#39;popover&#39;)</code>.</p>
+<h3 id="default-settings">Default settings</h3>
+<p>You can change the default settings for a plugin by modifying the plugin&#39;s <code>Constructor.DEFAULTS</code> object:</p>
+<p>{% highlight js %}
+$.fn.modal.Constructor.DEFAULTS.keyboard = false // changes default for the modal plugin&#39;s <code>keyboard</code> option to false
+{% endhighlight %}</p>
+<h2 id="no-conflict">No conflict</h2>
+<p>Sometimes it is necessary to use Bootstrap plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call <code>.noConflict</code> on the plugin you wish to revert the value of.</p>
+<p>{% highlight js %}
+var bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
+$.fn.bootstrapBtn = bootstrapButton            // give $().bootstrapBtn the Bootstrap functionality
+{% endhighlight %}</p>
+<h2 id="events">Events</h2>
+<p>Bootstrap provides custom events for most plugins&#39; unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code>show</code>) is triggered at the start of an event, and its past participle form (ex. <code>shown</code>) is triggered on the completion of an action.</p>
+<p>All infinitive events provide <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault"><code>preventDefault()</code></a> functionality. This provides the ability to stop the execution of an action before it starts.</p>
+<p>{% highlight js %}
+$(&#39;#myModal&#39;).on(&#39;show.bs.modal&#39;, function (e) {
+  if (!data) return e.preventDefault() // stops modal from being shown
+})
+{% endhighlight %}</p>
+<h2 id="version-numbers">Version numbers</h2>
+<p>The version of each of Bootstrap&#39;s jQuery plugins can be accessed via the <code>VERSION</code> property of the plugin&#39;s constructor. For example, for the tooltip plugin:</p>
+<p>{% highlight js %}
+$.fn.tooltip.Constructor.VERSION // =&gt; &quot;{{ site.current_version }}&quot;
+{% endhighlight %}</p>
+<h2 id="no-special-fallbacks-when-javascript-is-disabled">No special fallbacks when JavaScript is disabled</h2>
+<p>Bootstrap&#39;s plugins don&#39;t fall back particularly gracefully when JavaScript is disabled. If you care about the user experience in this case, use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript"><code>&lt;noscript&gt;</code></a> to explain the situation (and how to re-enable JavaScript) to your users, and/or add your own custom fallbacks.</p>
+<p>{% callout warning %}</p>
+<h4 id="third-party-libraries">Third-party libraries</h4>
+<p><strong>Bootstrap does not officially support third-party JavaScript libraries</strong> like Prototype or jQuery UI. Despite <code>.noConflict</code> and namespaced events, there may be compatibility problems that you need to fix on your own.
+{% endcallout %}</p>
+<h2 id="transitions">Transitions</h2>
+<p>For simple transition effects, include <code>transition.js</code> once alongside the other JS files. If you&#39;re using the compiled (or minified) <code>bootstrap.js</code>, there is no need to include this—it&#39;s already there.</p>
+<p>Transition.js is a basic helper for <code>transitionEnd</code> events as well as a CSS transition emulator. It&#39;s used by the other plugins to check for CSS transition support and to catch hanging transitions.</p>

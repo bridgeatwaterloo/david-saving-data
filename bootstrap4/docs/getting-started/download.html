@@ -1,0 +1,80 @@
+<hr>
+<p>layout: docs
+title: Download</p>
+<h2 id="group-getting-started">group: getting-started</h2>
+<p><strong>Bootstrap v{{ site.current_version}}</strong> is available for download in several ways, including some of your favorite package managers. Choose from the options below to snag just what you need.</p>
+<div class="row m-t-2">
+  <div class="col-sm-6">
+{% markdown %}
+### Compiled
+Download just the compiled and minified CSS and JavaScript. Doesn&#39;t include any documentation or original source files.
+
+{% comment %}
+<a href="{{ site.download.dist }}" class="btn btn-bs btn-outline" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download compiled');">Download Bootstrap</a>
+{% endcomment %}
+<span class="text-muted">Coming soon!</span>
+{% endmarkdown %}
+  </div>
+  <div class="col-sm-6">
+{% markdown %}
+### Source files
+Download everything: source Sass, JavaScript, and documentation files. <strong>Requires a Sass compiler, <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>, and <a href="{{ site.baseurl }}/getting-started/build-tools/#tooling-setup">some setup</a>.</strong>
+
+<a href="{{ site.download.source }}" class="btn btn-bs btn-outline" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download source');">Download source</a>
+{% endmarkdown %}
+  </div>
+</div>
+
+<h2 id="package-managers">Package managers</h2>
+<p>Pull in Bootstrap&#39;s <strong>source files</strong> into nearly any project with some of the most popular package managers. No matter the package manager, Bootstrap will <strong>require a Sass compiler and <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a></strong> for a setup that matches our official compiled versions.</p>
+<p>{% callout warning %}
+<strong>Heads up!</strong> Not all package managers have the v4 alpha published yet, but we should have them up shortly!
+{% endcallout %}</p>
+<h3 id="bower">Bower</h3>
+<p>Install and manage Bootstrap&#39;s Sass and JavaScript using <a href="http://bower.io">Bower</a>.</p>
+<p>{% highlight bash %}$ bower install bootstrap#v{{ site.current_version }}{% endhighlight %}</p>
+<h3 id="npm">npm</h3>
+<p>Install Bootstrap in your Node powered apps with <a href="https://www.npmjs.org/package/bootstrap">the npm package</a>:</p>
+<p>{% highlight bash %}$ npm install bootstrap@{{ site.current_version }}{% endhighlight %}</p>
+<p><code>require(&#39;bootstrap&#39;)</code> will load all of Bootstrap&#39;s jQuery plugins onto the jQuery object. The <code>bootstrap</code> module itself does not export anything. You can manually load Bootstrap&#39;s jQuery plugins individually by loading the <code>/js/*.js</code> files under the package&#39;s top-level directory.</p>
+<p>Bootstrap&#39;s <code>package.json</code> contains some additional metadata under the following keys:</p>
+<ul>
+<li><code>sass</code> - path to Bootstrap&#39;s main <a href="http://sass-lang.com/">Sass</a> source file</li>
+<li><code>style</code> - path to Bootstrap&#39;s non-minified CSS that&#39;s been precompiled using the default settings (no customization)</li>
+</ul>
+<h3 id="meteor">Meteor</h3>
+<p>{% highlight bash %}
+$ meteor add twbs:bootstrap@={{ site.current_version }}
+{% endhighlight %}</p>
+<h3 id="composer">Composer</h3>
+<p>You can also install and manage Bootstrap&#39;s Sass and JavaScript using <a href="https://getcomposer.org">Composer</a>:</p>
+<p>{% highlight bash %}
+$ composer require twbs/bootstrap
+{% endhighlight %}</p>
+<h3 id="nuget">NuGet</h3>
+<p>If you develop in .NET, you can also install and manage Bootstrap&#39;s <a href="https://www.nuget.org/packages/bootstrap/">CSS</a> or <a href="https://www.nuget.org/packages/bootstrap.sass/">Sass</a> and JavaScript using <a href="https://www.nuget.org">NuGet</a>:</p>
+<p>{% highlight powershell %}
+PM&gt; Install-Package bootstrap -Pre
+PM&gt; Install-Package bootstrap.sass -Pre
+{% endhighlight %}</p>
+<p>The <code>-Pre</code> is required until Bootstrap v4 has a stable release.</p>
+<h2 id="custom-builds">Custom builds</h2>
+<p>Need only a part of Bootstrap&#39;s CSS or JS? Use one of the custom builds to snag just what you need.</p>
+<div class="row">
+  <div class="col-sm-4">
+    <h3>Reboot</h3>
+    <p>Includes variables/mixins, Normalize, and Reboot. No JavaScript.</p>
+    <a class="btn btn-bs btn-outline" href="#">Download</a>
+  </div>
+  <div class="col-sm-4">
+    <h3>Grid only</h3>
+    <p>Includes variables/mixins and our grid system. No JavaScript.</p>
+    <a class="btn btn-bs btn-outline" href="#">Download</a>
+  </div>
+  <div class="col-sm-4">
+    <h3>Flexbox</h3>
+    <p>All of Bootstrap with flexbox enabled and <strong>lower browser support</strong>.</p>
+    <a class="btn btn-bs btn-outline" href="#">Download</a>
+  </div>
+</div>
+

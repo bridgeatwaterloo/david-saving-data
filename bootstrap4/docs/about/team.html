@@ -1,0 +1,18 @@
+<hr>
+<p>layout: docs
+title: Team</p>
+<h2 id="group-about">group: about</h2>
+<p>Bootstrap is maintained by the founding team and a small group of invaluable core contributors, with the massive support and involvement of our community.</p>
+<div class="list-group bd-team">
+  {% for member in site.data.core-team %}
+    <div class="list-group-item">
+      <iframe class="github-btn" src="https://ghbtns.com/github-btn.html?user={{ member.user }}&amp;type=follow"></iframe>
+      <a class="team-member" href="https://github.com/{{ member.user }}">
+        <img src="https://secure.gravatar.com/avatar/{{ member.gravatar }}" alt="@{{ member.user }}" width="32" height="32">
+        <strong>{{ member.name }}</strong> <small>@{{ member.user }}</small>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+<p>Get involved with Bootstrap development by <a href="https://github.com/twbs/bootstrap/issues/new">opening an issue</a> or submitting a pull request. Read our <a href="https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md">contributing guidelines</a> for information on how we develop.</p>

@@ -1,0 +1,580 @@
+<hr>
+<p>layout: docs
+title: Tables</p>
+<h2 id="group-content">group: content</h2>
+<p>Due to the widespread use of tables across third-party widgets like calendars and date pickers, we&#39;ve designed our tables to be <strong>opt-in</strong>. Just add the base class <code>.table</code> to any <code>&lt;table&gt;</code>.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Will be replaced with the ToC, excluding the &quot;Contents&quot; header
+{:toc}</li>
+</ul>
+<h2 id="basic-example">Basic example</h2>
+<p>{% example html %}</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+{% endexample %}
+
+## Inverse table
+
+{% example html %}
+<table class="table table-inverse">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+{% endexample %}
+
+## Table head options
+
+Use one of two modifier classes to make <code>&lt;thead&gt;</code>s appear light or dark gray.
+
+{% example html %}
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><table class="table">
+  <thead class="thead-default">
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+{% endexample %}</p>
+<h2 id="striped-rows">Striped rows</h2>
+<p>Use <code>.table-striped</code> to add zebra-striping to any table row within the <code>&lt;tbody&gt;</code>.</p>
+<p>{% example html %}</p>
+<p><table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+{% endexample %}</p>
+<h2 id="bordered-table">Bordered table</h2>
+<p>Add <code>.table-bordered</code> for borders on all sides of the table and cells.</p>
+<p>{% example html %}</p>
+<p><table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@TwBootstrap</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+{% endexample %}</p>
+<h2 id="hoverable-rows">Hoverable rows</h2>
+<p>Add <code>.table-hover</code> to enable a hover state on table rows within a <code>&lt;tbody&gt;</code>.</p>
+<p>{% example html %}</p>
+<p><table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+{% endexample %}</p>
+<h2 id="small-table">Small table</h2>
+<p>Add <code>.table-sm</code> to make tables more compact by cutting cell padding in half.</p>
+<p>{% example html %}</p>
+<p><table class="table table-sm">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+{% endexample %}</p>
+<h2 id="contextual-classes">Contextual classes</h2>
+<p>Use contextual classes to color table rows or individual cells.</p>
+<div class="table-responsive">
+  <table class="table table-bordered table-striped">
+    <colgroup>
+      <col class="col-xs-1">
+      <col class="col-xs-7">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <code>.table-active</code>
+        </th>
+        <td>Applies the hover color to a particular row or cell</td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <code>.table-success</code>
+        </th>
+        <td>Indicates a successful or positive action</td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <code>.table-info</code>
+        </th>
+        <td>Indicates a neutral informative change or action</td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <code>.table-warning</code>
+        </th>
+        <td>Indicates a warning that might need attention</td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <code>.table-danger</code>
+        </th>
+        <td>Indicates a dangerous or potentially negative action</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="bd-example">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Column heading</th>
+        <th>Column heading</th>
+        <th>Column heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-active">
+        <th scope="row">1</th>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">3</th>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+      <tr class="table-info">
+        <th scope="row">5</th>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+      <tr class="table-warning">
+        <th scope="row">7</th>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+      <tr class="table-danger">
+        <th scope="row">9</th>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>{% highlight html %}
+<!-- On rows --></p>
+<tr class="table-active">...</tr>
+<tr class="table-success">...</tr>
+<tr class="table-warning">...</tr>
+<tr class="table-danger">...</tr>
+<tr class="table-info">...</tr>
+
+<!-- On cells (`td` or `th`) -->
+<p><tr>
+  <td class="table-active">...</td>
+  <td class="table-success">...</td>
+  <td class="table-warning">...</td>
+  <td class="table-danger">...</td>
+  <td class="table-info">...</td>
+</tr>
+{% endhighlight %}</p>
+<h2 id="responsive-tables">Responsive tables</h2>
+<p>Create responsive tables by wrapping any <code>.table</code> in <code>.table-responsive</code> to make them scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, you will not see any difference in these tables.</p>
+<p>{% callout warning %}</p>
+<h4 id="vertical-clipping-truncation">Vertical clipping/truncation</h4>
+<p>Responsive tables make use of <code>overflow-y: hidden</code>, which clips off any content that goes beyond the bottom or top edges of the table. In particular, this can clip off dropdown menus and other third-party widgets.
+{% endcallout %}</p>
+<p>{% callout warning %}</p>
+<h4 id="firefox-and-fieldsets">Firefox and fieldsets</h4>
+<p>Firefox has some awkward fieldset styling involving <code>width</code> that interferes with the responsive table. This cannot be overridden without a Firefox-specific hack that we <strong>don&#39;t</strong> provide in Bootstrap:</p>
+<p>{% highlight css %}
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+{% endhighlight %}</p>
+<p>For more information, read <a href="https://stackoverflow.com/questions/17408815/fieldset-resizes-wrong-appears-to-have-unremovable-min-width-min-content/17863685#17863685">this Stack Overflow answer</a>.
+{% endcallout %}</p>
+<div class="bd-example">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<p>{% highlight html %}</p>
+<p><div class="table-responsive">
+  <table class="table">
+    ...
+  </table>
+</div>
+{% endhighlight %}</p>
+<h3 id="reflow">Reflow</h3>
+<p>{% example html %}</p>
+<p><table class="table table-reflow">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Table heading</th>
+      <th>Table heading</th>
+      <th>Table heading</th>
+      <th>Table heading</th>
+      <th>Table heading</th>
+      <th>Table heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+    </tr>
+  </tbody>
+</table>
+{% endexample %}</p>

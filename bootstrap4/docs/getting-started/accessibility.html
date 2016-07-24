@@ -1,0 +1,38 @@
+<hr>
+<p>layout: docs
+title: Accessibility</p>
+<h2 id="group-getting-started">group: getting-started</h2>
+<p>Bootstrap follows common web standards and—with minimal extra effort—can be used to create sites that are accessible to those using <abbr title="Assistive Technology" class="initialism">AT</abbr>.</p>
+<h2 id="component-requirements">Component requirements</h2>
+<p>Some common HTML elements are always in need for basic accessibility enhancements through <code>role</code>s and Aria attributes. Below is a list of some of the most frequently used ones.</p>
+<p>{% callout info %}
+<strong>Heads up!</strong> As we go through the alphas, we&#39;ll be moving more accessibility notes here with links to specific sections from other areas of the docs.
+{% endcallout %}</p>
+<h3 id="button-groups">Button groups</h3>
+<p>In order for assistive technologies–such as screen readers–to convey that a series of buttons is grouped, an appropriate <code>role</code> attribute needs to be provided. For button groups, this would be <code>role=&quot;group&quot;</code>, while toolbars should have a <code>role=&quot;toolbar&quot;</code>.</p>
+<p>In addition, groups and toolbars should be given an explicit label, as most assistive technologies will otherwise not announce them, despite the presence of the correct <code>role</code> attribute. In the examples provided here, we use <code>aria-label</code>, but alternatives such as <code>aria-labelledby</code> can also be used.</p>
+<h2 id="skip-navigation">Skip navigation</h2>
+<p>If your navigation contains many links and comes before the main content in the DOM, add a <code>Skip to main content</code> link before the navigation (for a simple explanation, see this <a href="http://a11yproject.com/posts/skip-nav-links/">A11Y Project article on skip navigation links</a>). Using the <code>.sr-only</code> class will visually hide the skip link, and the <code>.sr-only-focusable</code> class will ensure that the link becomes visible once focused (for sighted keyboard users).</p>
+<p>{% callout danger %}
+Due to long-standing shortcomings/bugs in Chrome (see <a href="https://code.google.com/p/chromium/issues/detail?id=262171" title="Chromium bug tracker - Issue 262171: Focus should cycle from named anchor">issue 262171 in the Chromium bug tracker</a>) and Internet Explorer (see this article on <a href="http://accessibleculture.org/articles/2010/05/in-page-links/">in-page links and focus order</a>), you will need to make sure that the target of your skip link is at least programmatically focusable by adding <code>tabindex=&quot;-1&quot;</code>.</p>
+<p>In addition, you may want to explicitly suppress a visible focus indication on the target (particularly as Chrome currently also sets focus on elements with <code>tabindex=&quot;-1&quot;</code> when they are clicked with the mouse) with <code>#content:focus { outline: none; }</code>.</p>
+<p>Note that this bug will also affect any other in-page links your site may be using, rendering them useless for keyboard users. You may consider adding a similar stop-gap fix to all other named anchors / fragment identifiers that act as link targets.
+{% endcallout %}</p>
+<p>{% highlight html %}</p>
+<p><body>
+  <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+  ...
+  <div class="container" id="content" tabindex="-1">
+    <!-- The main page content -->
+  </div>
+</body>
+{% endhighlight %}</p>
+<h2 id="nested-headings">Nested headings</h2>
+<p>When nesting headings (<code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>), your primary document header should be an <code>&lt;h1&gt;</code>. Subsequent headings should make logical use of <code>&lt;h2&gt;</code> - <code>&lt;h6&gt;</code> such that screen readers can construct a table of contents for your pages.</p>
+<p>Learn more at <a href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/Section508/">HTML CodeSniffer</a> and <a href="http://accessibility.psu.edu/headings">Penn State&#39;s Accessability</a>.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="https://github.com/squizlabs/HTML_CodeSniffer">&quot;HTML Codesniffer&quot; bookmarklet for identifying accessibility issues</a></li>
+<li><a href="http://a11yproject.com/">The A11Y Project</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Accessibility">MDN accessibility documentation</a></li>
+</ul>

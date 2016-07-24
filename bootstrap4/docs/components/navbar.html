@@ -1,0 +1,257 @@
+<hr>
+<p>layout: docs
+title: Navbar</p>
+<h2 id="group-components">group: components</h2>
+<p>The navbar is a simple wrapper for positioning branding, navigation, and other elements into a concise navigation header. It&#39;s easily extensible and, with the help of our collapse plugin, it can easily integrate offscreen content.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Will be replaced with the ToC, excluding the &quot;Contents&quot; header
+{:toc}</li>
+</ul>
+<h2 id="basics">Basics</h2>
+<p>Here&#39;s what you need to know before getting started with the navbar:</p>
+<ul>
+<li>Navbars require a wrapping <code>.navbar</code> and a <a href="#color-schemes">color scheme</a>.</li>
+<li>Navbars and their contents are fluid by default. Use <a href="#containers">optional containers</a> to limit their horizontal width.</li>
+<li>Use <code>.pull-*-left</code> and <code>.pull-*-right</code> to quickly align sub-components.</li>
+<li>Ensure accessibility by using a <code>&lt;nav&gt;</code> element or, if using a more generic element such as a <code>&lt;div&gt;</code>, add a <code>role=&quot;navigation&quot;</code> to every navbar to explicitly identify it as a landmark region for users of assistive technologies.</li>
+</ul>
+<h2 id="supported-content">Supported content</h2>
+<p>Navbars come with built-in support for a handful of sub-components. Mix and match from the following as you need:</p>
+<ul>
+<li><code>.navbar-brand</code> for your company, product, or project name</li>
+<li><code>.navbar-nav</code> for a full-height and lightweight navigation (including support for dropdowns)</li>
+<li><code>.navbar-toggler</code> for use with our collapse plugin and other <a href="#collapsing-content">navigation toggling</a> behaviors.</li>
+</ul>
+<p>Here&#39;s an example of all the sub-components included in a default, light navbar:</p>
+<p>{% example html %}</p>
+<nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <ul class="nav navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Features</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Pricing</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About</a>
+    </li>
+  </ul>
+  <form class="form-inline pull-xs-right">
+    <input class="form-control" type="text" placeholder="Search">
+    <button class="btn btn-success-outline" type="submit">Search</button>
+  </form>
+</nav>
+{% endexample %}
+
+### Brand
+
+The <code>.navbar-brand</code> can be applied to most elements, but an anchor works best.
+
+{% example html %}
+<nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand" href="#">Navbar</a>
+</nav>
+
+<nav class="navbar navbar-light bg-faded">
+  <h1 class="navbar-brand">Navbar</h1>
+</nav>
+
+<p>{% endexample %}</p>
+<h3 id="nav">Nav</h3>
+<p>Navbar navigation is similar to our regular nav options—use the <code>.nav</code> base class with a modifier to achieve a particular look. In this case you&#39;ll want <code>.nav.navbar-nav</code>.</p>
+<p>{% example html %}</p>
+<nav class="navbar navbar-light bg-faded">
+  <ul class="nav navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Features</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Pricing</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About</a>
+    </li>
+  </ul>
+</nav>
+{% endexample %}
+
+And because we use classes for our navs, you can avoid the list-based approach entirely if you like.
+
+{% example html %}
+<nav class="navbar navbar-light bg-faded">
+  <div class="nav navbar-nav">
+    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+    <a class="nav-item nav-link" href="#">Features</a>
+    <a class="nav-item nav-link" href="#">Pricing</a>
+    <a class="nav-item nav-link" href="#">About</a>
+  </div>
+</nav>
+{% endexample %}
+
+
+## Color schemes
+
+Theming the navbar has never been easier thanks to the combination of a simple link color modifier class and <code>background-color</code> utilities. Put another way, you specify light or dark and apply a background color.
+
+Here are some examples to show what we mean.
+
+<div class="bd-example">
+  <nav class="navbar navbar-dark bg-inverse">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <ul class="nav navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+    <form class="form-inline pull-xs-right">
+      <input class="form-control" type="text" placeholder="Search">
+      <button class="btn btn-info-outline" type="submit">Search</button>
+    </form>
+  </nav>
+  <nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <ul class="nav navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+    <form class="form-inline pull-xs-right">
+      <input class="form-control" type="text" placeholder="Search">
+      <button class="btn btn-secondary-outline" type="submit">Search</button>
+    </form>
+  </nav>
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <ul class="nav navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+    <form class="form-inline pull-xs-right">
+      <input class="form-control" type="text" placeholder="Search">
+      <button class="btn btn-primary-outline" type="submit">Search</button>
+    </form>
+  </nav>
+</div>
+
+{% highlight html %}
+<nav class="navbar navbar-dark bg-inverse">
+  <!-- Navbar content -->
+</nav>
+
+<nav class="navbar navbar-dark bg-primary">
+  <!-- Navbar content -->
+</nav>
+
+<p><nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <!-- Navbar content -->
+</nav>
+{% endhighlight %}</p>
+<h2 id="containers">Containers</h2>
+<p>Although it&#39;s not required, you can wrap a navbar in a <code>.container</code> to center it on a page or add one within to only center the contents of a <a href="#placement">fixed or static top navbar</a>.</p>
+<p>{% example html %}</p>
+<p><div class="container">
+  <nav class="navbar navbar-light bg-faded">
+    <a class="navbar-brand" href="#">Navbar</a>
+  </nav>
+</div>
+{% endexample %}</p>
+<p>{% example html %}</p>
+<p><nav class="navbar navbar-light bg-faded">
+  <div class="container">
+    <a class="navbar-brand" href="#">Navbar</a>
+  </div>
+</nav>
+{% endexample %}</p>
+<h2 id="placement">Placement</h2>
+<p>Navbars can be statically placed (their default behavior), static without rounded corners, or fixed to the top or bottom of the viewport.</p>
+<p>{% example html %}</p>
+<p><nav class="navbar navbar-full navbar-light bg-faded">
+  <a class="navbar-brand" href="#">Full width</a>
+</nav>
+{% endexample %}</p>
+<p>{% example html %}</p>
+<p><nav class="navbar navbar-fixed-top navbar-light bg-faded">
+  <a class="navbar-brand" href="#">Fixed top</a>
+</nav>
+{% endexample %}</p>
+<p>{% example html %}</p>
+<p><nav class="navbar navbar-fixed-bottom navbar-light bg-faded">
+  <a class="navbar-brand" href="#">Fixed bottom</a>
+</nav>
+{% endexample %}</p>
+<h2 id="collapsible-content">Collapsible content</h2>
+<p>Our collapse plugin allows you to use a <code>&lt;button&gt;</code> or <code>&lt;a&gt;</code> to toggle hidden content.</p>
+<p>{% example html %}</p>
+<p><div class="collapse" id="exCollapsingNavbar">
+  <div class="bg-inverse p-a-1">
+    <h4>Collapsed content</h4>
+    <span class="text-muted">Toggleable via the navbar brand.</span>
+  </div>
+</div></p>
+<p><nav class="navbar navbar-light bg-faded">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+    &#9776;
+  </button>
+</nav>
+{% endexample %}</p>
+<p>For more complex navbar patterns, like those used in Bootstrap v3, use the <code>.navbar-toggleable-*</code> classes in conjunction with the <code>.navbar-toggler</code>. These classes override our responsive utilities to show navigation only when content is meant to be shown.</p>
+<p>{% example html %}</p>
+<p><nav class="navbar navbar-light bg-faded">
+  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+    &#9776;
+  </button>
+  <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+    <a class="navbar-brand" href="#">Responsive navbar</a>
+    <ul class="nav navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endexample %}</p>

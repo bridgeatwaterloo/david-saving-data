@@ -1,0 +1,154 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>David Question Prototype</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Ali comment:
+
+        Bootstrap includes normalize.css, so replacing normalize.css
+
+        We are using Bootstrap 4 as it has a lovely card component
+
+        I have downloaded the entire thing into a folder called bootstrap4 in the root of this project
+
+     -->
+    <link rel="stylesheet" href="bootstrap4/dist/css/bootstrap.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  </head>
+  <body>
+
+    <!-- Navbar from Bootstrap: http://v4-alpha.getbootstrap.com/components/navbar/ -->
+    <nav class="navbar navbar-light bg-faded navbar-fixed-top">
+      <div class="container">
+        David: Saving Data
+      </div>
+    </nav>
+
+    <!-- A div with a class of container from bootstrap. I have given it a class of david-container as well, so we can target just this div in our CSS -->
+    <div class="container david-container">
+
+      <!-- Our first view: Checkin
+
+      A section element with a class of view so we can target all views together
+      It also has a class of view-checkin so we can target it specifically
+
+       -->
+      <section class="view view-checkin">
+
+        <!-- Card from bootstrap: http://v4-alpha.getbootstrap.com/components/card/ -->
+        <div class="card text-xs-center">
+          <div class="card-header">
+            Checkin
+          </div>
+          <div class="card-block">
+            <h4 class="card-title">Please confirm</h4>
+            <p class="card-text geolocation-message">We need to check you are in the Blue Room at Strive Festival. Please confirm by sharing your location with us.</p>
+            <a href="#" class="btn btn-primary submit-checkin">Check me in</a>
+          </div>
+        </div>
+
+      </section>
+
+
+
+      <!-- Our second view: Set username
+
+        Same class as the first view, with its own unique view-set-username class
+
+      -->
+
+      <section class="view view-set-username">
+
+        <!-- Another card from bootstrap -->
+        <div class="card text-xs-center">
+          <div class="card-header">
+            Login
+          </div>
+          <div class="card-block">
+            <h4 class="card-title">Welcome to David</h4>
+            <p class="card-text">What would you like your username to be?</p>
+
+
+            <!-- a form with an input -->
+            <form class="form-set-username" action="https://api.decoded.com/store/the-david-app-store/">
+<input type="text" class="form-control" name="username" placeholder="Choose your username">
+            </form>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Our third view: Ask them a question -->
+      <section class="view view-question">
+        <div class="card text-xs-center">
+          <div class="card-header">
+            Question
+          </div>
+          <div class="card-block">
+            <h4 class="card-title">Are you happy, <span class="username">@username</span>?</h4>
+            <p class="card-text"></p>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-success" data-answer="yes">Yes</button>
+              <button type="button" class="btn btn-danger" data-answer="no">No</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Our third view: Ask them a question -->
+      <section class="view view-default">
+        <div class="card text-xs-center">
+          <div class="card-header">
+            Thank you
+          </div>
+          <div class="card-block">
+            <h4 class="card-title">We are processing the results.</h4>
+          </div>
+        </div>
+      </section>
+
+
+    </div><!-- end of .david-container -->
+
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+
+    <!-- included tether.js to remove error -->
+    <script src="tether-1.3.1/dist/js/tether.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="bootstrap4/dist/js/bootstrap.js"></script>
+
+    <!-- Ali comment:
+
+        jQuery is included above as part of HTML5 Boilerplate
+
+        Bootstrap's JavaScript needs to be included after the browser has read jQuery
+
+     -->
+
+    <script src="js/plugins.js"></script>
+    <script src="js/david-helper-functions.js"></script>
+    <script src="js/david-check-location.js"></script>
+    <script src="js/david-decisions.js"></script>
+    <script src="js/david-set-username.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>
+
+
+
+
+
+

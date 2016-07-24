@@ -1,0 +1,41 @@
+<hr>
+<p>layout: docs
+title: Flexbox</p>
+<h2 id="group-getting-started">group: getting-started</h2>
+<p>Flexbox support has finally come to Bootstrap. Opt-in to the new CSS layout styles with the flick of a variable or the swap of a stylesheet.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Will be replaced with the ToC, excluding the &quot;Contents&quot; header
+{:toc}</li>
+</ul>
+<h2 id="what-s-included">What&#39;s included</h2>
+<p>Flexbox support is available for a number of Bootstrap&#39;s components:</p>
+<ul>
+<li>The entire grid system (mixins and predefined classes), which switch from <code>float</code>s to <code>display: flex;</code>.</li>
+<li>Input groups, which move from <code>display: table;</code> to <code>display: flex;</code>.</li>
+<li>The media component moves from <code>display: table;</code> and a number of hacky styles to a simple <code>display: flex;</code>.</li>
+</ul>
+<p>Vendor prefixes are provided in our compiled CSS with Autoprefixer via Grunt.</p>
+<h2 id="why-flexbox-">Why flexbox?</h2>
+<p>In a nutshell, flexbox provides simpler and more flexible layout options in CSS. More specifically, it provides:</p>
+<ul>
+<li>Easy vertical alignment of content within a parent element.</li>
+<li>Easy reordering of content across devices and screen resolutions with the help of media queries.</li>
+<li>Easy CSS-only equal height columns for your grid-based layouts.</li>
+</ul>
+<p>All these things are possible outside flexbox, but typically require extra hacks and workarounds to do right.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>If you&#39;re familiar with modifying variables in Sass—or any other CSS preprocessor—you&#39;ll be right at home to move into flexbox mode.</p>
+<ol>
+<li>Open the <code>_variables.scss</code> file and find the <code>$enable-flex</code> variable.</li>
+<li>Change it from <code>false</code> to <code>true</code>.</li>
+<li>Recompile, and done!</li>
+</ol>
+<p>Alternatively, if you don&#39;t need the source Sass files, you may swap the default Bootstrap compiled CSS with the compiled flexbox variation. <a href="{{ site.baseurl }}/getting-started/download">Head to the download page</a> for more information.</p>
+<h2 id="browser-support">Browser support</h2>
+<p>Enabling flexbox means <strong>reduced browser and device support:</strong></p>
+<ul>
+<li>Internet Explorer 9 and below do not support flexbox.</li>
+<li>Internet Explorer 10 has a few known quirks (see the &quot;Known issues&quot; tab in <a href="http://caniuse.com/#feat=flexbox">Can I use...</a>), requires using a prefix, and only supports the syntax from the old 2012 version of the spec.</li>
+</ul>
+<p>Please be extra conscious of your user base when enabling flexbox in your project. Visit <a href="http://caniuse.com/#feat=flexbox">Can I use...</a> for details on browser support of flexbox.</p>

@@ -1,0 +1,93 @@
+<hr>
+<p>layout: docs
+title: Introduction
+group: getting-started</p>
+<h2 id="redirect_from-getting-started-">redirect_from: &quot;/getting-started/&quot;</h2>
+<p>Bootstrap is the world&#39;s most popular framework for building responsive, mobile-first sites and applications. Inside you&#39;ll find high quality HTML, CSS, and JavaScript to make starting any project easier than ever.</p>
+<p>Here&#39;s how to quickly get started with the Bootstrap CDN and a template starter page.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Will be replaced with the ToC, excluding the &quot;Contents&quot; header
+{:toc}</li>
+</ul>
+<h2 id="quick-start">Quick start</h2>
+<p>Looking to quickly add Bootstrap to your project? Use the Bootstrap CDN, provided for free by the folks at MaxCDN. Using a package manager or need to download the source files? <a href="{{ site.baseurl }}/getting-started/download">Head to the downloads page.</a></p>
+<p>Copy-paste the stylesheet <code>&lt;link&gt;</code> into your <code>&lt;head&gt;</code> before all other stylesheets to load our CSS.</p>
+<p>{% highlight html %}</p>
+<p><link rel="stylesheet" href="{{ site.cdn.css }}" integrity="{{ site.cdn.css_hash }}" crossorigin="anonymous">
+{% endhighlight %}</p>
+<p>Add our JavaScript plugins and jQuery near the end of your pages, right before the closing <code>&lt;/body&gt;</code> tag. Be sure to place jQuery first as our code depends on it.</p>
+<p>{% highlight html %}</p>
+<p><script src="{{ site.cdn.jquery }}"></script></p>
+<p><script src="{{ site.cdn.js }}" integrity="{{ site.cdn.js_hash }}" crossorigin="anonymous"></script>
+{% endhighlight %}</p>
+<p>And that&#39;s it—you&#39;re on your way to a fully Bootstrapped site. If you&#39;re at all unsure about the general page structure, keep reading for an example page template.</p>
+<h2 id="starter-template">Starter template</h2>
+<p>Be sure to have your pages set up with the latest design and development standards. That means:</p>
+<ul>
+<li>Using an HTML5 doctype</li>
+<li>Forcing Internet Explorer to use its latest rendering mode (<a href="http://stackoverflow.com/q/6771258">read more</a>)</li>
+<li>And, utilizing the viewport meta tag.</li>
+</ul>
+<p>Put it all together and your pages should look like this:</p>
+<p>{% highlight html %}
+&lt;!DOCTYPE html&gt;</p>
+<p><html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge"></p>
+<pre><code>&lt;!-- Bootstrap CSS --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;{{ site.cdn.css }}&quot; integrity=&quot;{{ site.cdn.css_hash }}&quot; crossorigin=&quot;anonymous&quot;&gt;
+</code></pre><p>  </head>
+  <body>
+    <h1>Hello, world!</h1></p>
+<pre><code>&lt;!-- jQuery first, then Bootstrap JS. --&gt;
+&lt;script src=&quot;{{ site.cdn.jquery }}&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;{{ site.cdn.js }}&quot; integrity=&quot;{{ site.cdn.js_hash }}&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+</code></pre><p>  </body>
+</html>
+{% endhighlight %}</p>
+<p>That&#39;s all you need for overall page requirements. Visit the <a href="{{ site.baseurl }}/layout/overview">Layout docs</a> or <a href="{{ site.baseurl }}/examples/">our official examples</a> to start laying out your site&#39;s content and components.</p>
+<h2 id="important-globals">Important globals</h2>
+<p>Bootstrap employs a handful of important global styles and settings that you&#39;ll need to be aware of when using it, all of which are almost exclusively geared towards the <em>normalization</em> of cross browser styles. Let&#39;s dive in.</p>
+<h3 id="html5-doctype">HTML5 doctype</h3>
+<p>Bootstrap requires the use of the HTML5 doctype. Without it, you&#39;ll see some funky incomplete styling, but including it shouldn&#39;t cause any considerable hiccups.</p>
+<p>{% highlight html %}
+&lt;!DOCTYPE html&gt;</p>
+<p><html lang="en">
+  ...
+</html>
+{% endhighlight %}</p>
+<h3 id="responsive-meta-tag">Responsive meta tag</h3>
+<p>Bootstrap is developed <em>mobile first</em>, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, <strong>add the responsive viewport meta tag</strong> to your <code>&lt;head&gt;</code>.</p>
+<p>{% highlight html %}</p>
+<p><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% endhighlight %}</p>
+<p>You can see an example of this in action in the <a href="#starter-template">starter template</a>.</p>
+<h3 id="box-sizing">Box-sizing</h3>
+<p>For more straightforward sizing in CSS, we switch the global <code>box-sizing</code> value from <code>content-box</code> to <code>border-box</code>. This ensures <code>padding</code> does not affect the final computed width of an element, but it can cause problems with some third party software like including Google Maps and Google Custom Search Engine.</p>
+<p>On the rare occasion you need to override it, use something like the following:</p>
+<p>{% highlight scss %}
+.selector-for-some-widget {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+{% endhighlight %}</p>
+<p>With the above snippet, nested elements—including generated content via <code>:before</code> and <code>:after</code>—will all inherit the specified <code>box-sizing</code> for that <code>.selector-for-some-widget</code>.</p>
+<p>Learn more about <a href="https://css-tricks.com/box-sizing/">box model and sizing at CSS Tricks</a>.</p>
+<h3 id="normalize-css">Normalize.css</h3>
+<p>For improved cross-browser rendering, we use <a href="http://necolas.github.io/normalize.css/">Normalize.css</a> to correct small inconsistencies across browsers and devices. We further build on this with our own, slightly more opinionated styles with <a href="{{ site.baseurl }}/content/reboot/">Reboot</a>.</p>
+<h2 id="community">Community</h2>
+<p>Stay up to date on the development of Bootstrap and reach out to the community with these helpful resources.</p>
+<ul>
+<li>Follow <a href="https://twitter.com/getbootstrap">@getbootstrap on Twitter</a>.</li>
+<li>Read and subscribe to <a href="{{ site.blog }}">The Official Bootstrap Blog</a>.</li>
+<li>Join <a href="{{ site.slack }}">the official Slack room</a>.</li>
+<li>Chat with fellow Bootstrappers in IRC. On the <code>irc.freenode.net</code> server, in the <code>##bootstrap</code> channel.</li>
+<li>Implementation help may be found at Stack Overflow (tagged <a href="https://stackoverflow.com/questions/tagged/bootstrap-4"><code>bootstrap-4</code></a>).</li>
+<li>Developers should use the keyword <code>bootstrap</code> on packages which modify or add to the functionality of Bootstrap when distributing through <a href="https://www.npmjs.com/browse/keyword/bootstrap">npm</a> or similar delivery mechanisms for maximum discoverability.</li>
+</ul>
+<p>You can also follow <a href="https://twitter.com/getbootstrap">@getbootstrap on Twitter</a> for the latest gossip and awesome music videos.</p>

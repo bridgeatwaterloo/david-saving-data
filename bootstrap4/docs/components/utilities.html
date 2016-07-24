@@ -1,0 +1,304 @@
+<hr>
+<p>layout: docs
+title: Utility classes</p>
+<h2 id="group-components">group: components</h2>
+<p>Bootstrap includes dozens of utilities—classes with a single purpose. They&#39;re designed to reduce the frequency of highly repetitive declarations in your CSS while allowing for quick and easy development.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Will be replaced with the ToC, excluding the &quot;Contents&quot; header
+{:toc}</li>
+</ul>
+<h2 id="spacing">Spacing</h2>
+<p>Assign <code>margin</code> or <code>padding</code> to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties. All classes are multiples on the global default value, <code>1rem</code>.</p>
+<p>The classes are named using the format: <code>{property}-{sides}-{size}</code></p>
+<p>Where <em>property</em> is one of:</p>
+<ul>
+<li><code>m</code> - for classes that set <code>margin</code></li>
+<li><code>p</code> - for classes that set <code>padding</code></li>
+</ul>
+<p>Where <em>sides</em> is one of:</p>
+<ul>
+<li><code>t</code> - for classes that set <code>margin-top</code> or <code>padding-top</code></li>
+<li><code>b</code> - for classes that set <code>margin-bottom</code> or <code>padding-bottom</code></li>
+<li><code>l</code> - for classes that set <code>margin-left</code> or <code>padding-left</code></li>
+<li><code>r</code> - for classes that set <code>margin-right</code> or <code>padding-right</code></li>
+<li><code>x</code> - for classes that set both <code>*-left</code> and <code>*-right</code></li>
+<li><code>y</code> - for classes that set both <code>*-top</code> and <code>*-bottom</code></li>
+<li><code>a</code> - for classes that set a <code>margin</code> or <code>padding</code> on all 4 sides of the element</li>
+</ul>
+<p>Where <em>size</em> is one of:</p>
+<ul>
+<li><code>0</code> - for classes that eliminate the <code>margin</code> or <code>padding</code> by setting it to <code>0</code></li>
+<li><code>1</code> - (by default) for classes that set the <code>margin</code> or <code>padding</code> to <code>$spacer-x</code> or <code>$spacer-y</code></li>
+<li><code>2</code> - (by default) for classes that set the <code>margin</code> or <code>padding</code> to <code>$spacer-x * 1.5</code> or <code>$spacer-y * 1.5</code></li>
+<li><code>3</code> - (by default) for classes that set the <code>margin</code> or <code>padding</code> to <code>$spacer-x * 3</code> or <code>$spacer-y * 3</code></li>
+</ul>
+<p>Here are some representative examples of these classes:</p>
+<pre><code class="lang-scss">.m-t-0 {
+  margin-top: 0 !important;
+}
+
+.m-l-1 {
+  margin-left: $spacer-x !important;
+}
+
+.p-x-2 {
+  padding-left: ($spacer-x * 1.5) !important;
+  padding-right: ($spacer-x * 1.5) !important;
+}
+
+.p-a-3 {
+  padding: ($spacer-y * 3) ($spacer-x * 3) !important;
+}
+</code></pre>
+<p>Additionally, Bootstrap also includes an <code>.m-x-auto</code> class which sets the horizontal margins to <code>auto</code>.</p>
+<h2 id="text-alignment">Text alignment</h2>
+<p>Easily realign text to components with text alignment classes.</p>
+<p>{% example html %}</p>
+<p class="text-justify">Justified text.</p>
+<p class="text-nowrap">No wrap text.</p>
+{% endexample %}
+
+For left, right, and center alignment, responsive classes are available that use the same viewport width breakpoints as the grid system.
+
+{% example html %}
+<p class="text-xs-left">Left aligned text on all viewport sizes.</p>
+<p class="text-xs-center">Center aligned text on all viewport sizes.</p>
+<p class="text-xs-right">Right aligned text on all viewport sizes.</p>
+
+<p><p class="text-sm-left">Left aligned text on viewports sized SM (small) or wider.</p></p>
+<p><p class="text-md-left">Left aligned text on viewports sized MD (medium) or wider.</p></p>
+<p><p class="text-lg-left">Left aligned text on viewports sized LG (large) or wider.</p></p>
+<p><p class="text-xl-left">Left aligned text on viewports sized XL (extra-large) or wider.</p>
+{% endexample %}</p>
+<h2 id="text-transform">Text transform</h2>
+<p>Transform text in components with text capitalization classes.</p>
+<p>{% example html %}</p>
+<p><p class="text-lowercase">Lowercased text.</p></p>
+<p><p class="text-uppercase">Uppercased text.</p></p>
+<p><p class="text-capitalize">CapiTaliZed text.</p>
+{% endexample %}</p>
+<h2 id="font-weight-and-italics">Font weight and italics</h2>
+<p>Quickly change the weight (boldness) of text or italicize text.</p>
+<p>{% example html %}</p>
+<p><p class="font-weight-bold">Bold text.</p></p>
+<p><p class="font-weight-normal">Normal weight text.</p></p>
+<p><p class="font-italic">Italicized text.</p>
+{% endexample %}</p>
+<h2 id="contextual-colors-and-backgrounds">Contextual colors and backgrounds</h2>
+<p>Convey meaning through color with a handful of emphasis utility classes. These may also be applied to links and will darken on hover just like our default link styles.</p>
+<p>{% example html %}</p>
+<p><p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p></p>
+<p><p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p></p>
+<p><p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p></p>
+<p><p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p></p>
+<p><p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p></p>
+<p><p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+{% endexample %}</p>
+<p>Contextual text classes also work well on anchors with the provided hover and focus states.</p>
+<p>{% example html %}
+<a href="#" class="text-muted">Muted link</a>
+<a href="#" class="text-primary">Primary link</a>
+<a href="#" class="text-success">Success link</a>
+<a href="#" class="text-info">Info link</a>
+<a href="#" class="text-warning">Warning link</a>
+<a href="#" class="text-danger">Danger link</a>
+{% endexample %}</p>
+<p>Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes.</p>
+<p>{% example html %}</p>
+<div class="bg-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</div>
+<div class="bg-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</div>
+<div class="bg-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</div>
+<div class="bg-warning">Etiam porta sem malesuada magna mollis euismod.</div>
+<div class="bg-danger">Donec ullamcorper nulla non metus auctor fringilla.</div>
+<div class="bg-inverse">Cras mattis consectetur purus sit amet fermentum.</div>
+{% endexample %}
+
+{% callout info %}
+#### Dealing with specificity
+
+Sometimes contextual classes cannot be applied due to the specificity of another selector. In some cases, a sufficient workaround is to wrap your element&#39;s content in a <code>&lt;div&gt;</code> with the class.
+{% endcallout %}
+
+{% callout warning %}
+#### Conveying meaning to assistive technologies
+
+Ensure that any meaning conveyed through color is also conveyed in a format that is not purely presentational.
+{% endcallout %}
+
+## Close icon
+
+Use a generic close icon for dismissing content like modals and alerts. <strong>Be sure to include text for screen readers</strong>, as we&#39;ve done with <code>aria-label</code>.
+
+{% example html %}
+<button type="button" class="close" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+{% endexample %}
+
+## Responsive floats
+
+These utility classes float an element to the left or right, or disable floating, based on the current viewport size using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">CSS <code>float</code> property</a>. <code>!important</code> is included to avoid specificity issues. These use the same viewport width breakpoints as the grid system.
+
+Two similar non-responsive mixins (<code>pull-left</code> and <code>pull-right</code>) are also available.
+
+{% example html %}
+<div class="pull-xs-left">Float left on all viewport sizes</div>
+<div class="pull-xs-right">Float right on all viewport sizes</div>
+<div class="pull-xs-none">Don&#39;t float on all viewport sizes</div>
+
+<div class="pull-sm-left">Float left on viewports sized SM (small) or wider</div>
+<div class="pull-md-left">Float left on viewports sized MD (medium) or wider</div>
+<div class="pull-lg-left">Float left on viewports sized LG (large) or wider</div>
+<div class="pull-xl-left">Float left on viewports sized XL (extra-large) or wider</div>
+{% endexample %}
+
+{% highlight scss %}
+// Related simple non-responsive mixins
+.element {
+  @include pull-left;
+}
+.another-element {
+  @include pull-right;
+}
+{% endhighlight %}
+
+## Center content
+
+Set an element to <code>display: block;</code> and center via <code>margin</code>. Available as a mixin and class.
+
+{% example html %}
+<div class="center-block">Centered block</div>
+{% endexample %}
+
+{% highlight scss %}
+// Class
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Usage as a mixin
+.element {
+  @include center-block;
+}
+{% endhighlight %}
+
+Easily clear <code>float</code>s by adding <code>.clearfix</code> <strong>to the parent element</strong>. Utilizes <a href="http://nicolasgallagher.com/micro-clearfix-hack/">the micro clearfix</a> as popularized by Nicolas Gallagher. Can also be used as a mixin.
+
+{% highlight html %}
+<div class="clearfix">...</div>
+{% endhighlight %}
+
+{% highlight scss %}
+// Mixin itself
+.clearfix() {
+  &amp;:before,
+  &amp;:after {
+    content: &quot; &quot;;
+    display: table;
+  }
+  &amp;:after {
+    clear: both;
+  }
+}
+
+// Usage as a mixin
+.element {
+  @include clearfix;
+}
+{% endhighlight %}
+
+## Invisible content
+
+The <code>.invisible</code> class can be used to toggle only the visibility of an element, meaning its <code>display</code> is not modified and the element can still affect the flow of the document.
+
+{% highlight html %}
+<div class="invisible">...</div>
+{% endhighlight %}
+
+{% highlight scss %}
+// Class
+.invisible {
+  visibility: hidden;
+}
+
+// Usage as a mixin
+.element {
+  .invisible();
+}
+{% endhighlight %}
+
+## Screen readers and keyboard users
+
+Hide an element to all devices <strong>except screen readers</strong> with <code>.sr-only</code>. Combine <code>.sr-only</code> with <code>.sr-only-focusable</code> to show the element again when it&#39;s focused (e.g. by a keyboard-only user). Can also be used as mixins.
+
+{% comment %}
+Necessary for following <a href="../getting-started/#accessibility">accessibility best practices</a>.
+{% endcomment %}
+
+{% highlight html %}
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+{% endhighlight %}
+
+{% highlight scss %}
+// Usage as a mixin
+.skip-navigation {
+  @include sr-only;
+  @include sr-only-focusable;
+}
+{% endhighlight %}
+
+## Image replacement
+
+Utilize the <code>.text-hide</code> class or mixin to help replace an element&#39;s text content with a background image.
+
+{% highlight html %}
+<h1 class="text-hide">Custom heading</h1>
+{% endhighlight %}
+
+{% highlight scss %}
+// Usage as a mixin
+.heading {
+  @include text-hide;
+}
+{% endhighlight %}
+
+## Responsive embeds
+
+Allow browsers to determine video or slideshow dimensions based on the width of their containing block by creating an intrinsic ratio that will properly scale on any device.
+
+Rules are directly applied to <code>&lt;iframe&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;video&gt;</code>, and <code>&lt;object&gt;</code> elements; optionally use an explicit descendant class <code>.embed-responsive-item</code> when you want to match the styling for other attributes.
+
+<strong>Pro-Tip!</strong> You don&#39;t need to include <code>frameborder=&quot;0&quot;</code> in your <code>&lt;iframe&gt;</code>s as we override that for you.
+
+{% example html %}
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="//www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+</div>
+{% endexample %}
+
+Aspect ratios can be customized with modifier classes.
+
+{% highlight html %}
+<!-- 21:9 aspect ratio -->
+<div class="embed-responsive embed-responsive-21by9">
+  <iframe class="embed-responsive-item" src="..."></iframe>
+</div>
+
+<!-- 16:9 aspect ratio -->
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="..."></iframe>
+</div>
+
+<!-- 4:3 aspect ratio -->
+<div class="embed-responsive embed-responsive-4by3">
+  <iframe class="embed-responsive-item" src="..."></iframe>
+</div>
+
+<!-- 1:1 aspect ratio -->
+<p><div class="embed-responsive embed-responsive-1by1">
+  <iframe class="embed-responsive-item" src="..."></iframe>
+</div>
+{% endhighlight %}</p>
